@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Zomato Clone</title>
   <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body class="bg-gray-100">
 
@@ -30,12 +31,12 @@
         <div class="w-full max-w-2xl mt-8">
           <div class="flex">
             <div class="flex items-center bg-white p-4 rounded-l-md">
-              <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="w-5 h-5 text-red-600">
-                <path stroke-linecap="round" stroke-linejoin="round" d="M3 10h4l3-3m0 0l3 3m-3-3v12" />
-              </svg>
-              <input type="text" placeholder="Kollam" class="text-gray-700 pl-2 focus:outline-none">
+              <a href="#" class="text-red-600 hover:text-gray-900"><i class="fa-solid fa-location-dot"></i></a>
+
+              <input type="text" placeholder="  Kollam " class="text-gray-700 pl-2 focus:outline-none">
             </div>
-            <input type="text" placeholder="Search for restaurant, cuisine or a dish" class="flex-grow p-4 text-gray-700 rounded-r-md focus:outline-none">
+            
+            <input type="text"  placeholder="|  Search for restaurant, cuisine or a dish" class="flex-grow p-4 text-gray-700 rounded-r-md focus:outline-none">
           </div>
         </div>
       </div>
@@ -97,10 +98,189 @@
   </section>
 
 
-  <!-- Footer -->
-  <footer class="bg-gray-900 text-white p-4 text-center">
-    <p>© 2024 Zomato Clone. All Rights Reserved.</p>
-  </footer>
+  <div class="flex flex-col lg:flex-row items-center justify-center min-h-screen bg-yellow-50">
+    <!-- Left Section: Image -->
+    <div class="w-full lg:w-1/2 p-9">
+        <img src="	https://b.zmtcdn.com/data/o2_assets/ce5bc038a8a2d4f8f24465c8826182af1726501431.png" alt="Zomato app" class="mx-auto max-w-xs lg:max-w-md">
+    </div>
 
+    <!-- Right Section: Form -->
+    <div class="w-full lg:w-1/2 p-8  mx-9 bg-yellow-50">
+        <h1 class="text-3xl font-semibold text-gray-800">Get the Zomato app</h1>
+        <p class="mt-2 text-gray-600">We will send you a link, open it on your phone to download the app.</p>
+
+        <form class="mt-6 space-y-4">
+            <div class="flex items-center space-x-4">
+                <label class="flex items-center">
+                    <input type="radio" name="contactMethod" value="email" class="form-radio h-4 w-4 text-red-500" checked>
+                    <span class="ml-2 text-gray-700">Email</span>
+                </label>
+                <label class="flex items-center">
+                    <input type="radio" name="contactMethod" value="phone" class="form-radio h-4 w-4 text-red-500">
+                    <span class="ml-2 text-gray-700">Phone</span>
+                </label>
+            </div>
+
+            <div>
+                <input type="text" placeholder="Email or phone" class="w-full p-3 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-red-400">
+            </div>
+
+            <button type="submit" class="w-full bg-red-500 text-white py-3 rounded-lg hover:bg-red-600 transition-colors">
+                Share App Link
+            </button>
+        </form>
+
+        <div class="mt-6 flex justify-center space-x-4">
+            <a href="#" class=" p-3 rounded-lg">
+                <img src="https://b.zmtcdn.com/data/webuikit/23e930757c3df49840c482a8638bf5c31556001144.png" alt="Google Play" class="h-10">
+            </a>
+            <a href="#" class=" p-3 rounded-lg">
+                <img src="https://b.zmtcdn.com/data/webuikit/9f0c85a5e33adb783fa0aef667075f9e1556003622.png" alt="App Store" class="h-10">
+            </a>
+        </div>
+    </div>
+</div>
+
+
+
+<div class="max-w-4xl mx-auto p-8 ">
+  <h2 class="text-4xl font-semibold text-gray-800 mb-4">Explore options near me</h2>
+
+  <div class="space-y-4 bg-gray-50">
+      <!-- Accordion Item 1 -->
+      <div class="border border-gray-300 rounded-lg">
+          <button class="flex justify-between items-center w-full p-6 text-left text-gray-800 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-400" onclick="toggleContent(1)">
+              <span>Popular Cuisines Near Me</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-600 transform" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M5.293 7.707a1 1 0 011.414 0L10 11.414l3.293-3.707a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+          </button>
+          <div id="content1" class="hidden p-4 bg-white">
+              <p class="text-gray-700">Here are the popular cuisines available near you...</p>
+          </div>
+      </div>
+
+      <!-- Accordion Item 2 -->
+      <div class="border border-gray-300 rounded-lg">
+        <button class="flex justify-between items-center w-full p-6 text-left text-gray-800 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-400" onclick="toggleContent(1)">
+          <span>Popular Restaurant Types Near Me</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-600 transform" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M5.293 7.707a1 1 0 011.414 0L10 11.414l3.293-3.707a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+          </button>
+          <div id="content2" class="hidden p-4 bg-white">
+              <p class="text-gray-700">Here are the popular restaurant types available near you...</p>
+          </div>
+      </div>
+
+      <!-- Accordion Item 3 -->
+      <div class="border border-gray-300 rounded-lg">
+        <button class="flex justify-between items-center w-full p-6 text-left text-gray-800 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-400" onclick="toggleContent(1)">
+          <span>Top Restaurant Chains</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-600 transform" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M5.293 7.707a1 1 0 011.414 0L10 11.414l3.293-3.707a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+          </button>
+          <div id="content3" class="hidden p-4 bg-white">
+              <p class="text-gray-700">Here are the top restaurant chains available near you...</p>
+          </div>
+      </div>
+
+      <!-- Accordion Item 4 -->
+      <div class="border border-gray-300 rounded-lg">
+        <button class="flex justify-between items-center w-full p-6 text-left text-gray-800 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-gray-400" onclick="toggleContent(1)">
+          <span>Cities We Deliver To</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5 text-gray-600 transform" viewBox="0 0 20 20" fill="currentColor">
+                  <path fill-rule="evenodd" d="M5.293 7.707a1 1 0 011.414 0L10 11.414l3.293-3.707a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z" clip-rule="evenodd" />
+              </svg>
+          </button>
+          <div id="content4" class="hidden p-4 bg-white">
+              <p class="text-gray-700">Here are the cities we deliver to...</p>
+          </div>
+      </div>
+  </div>
+</div>
+
+
+  <!-- Footer -->  
+  <footer class="bg-white py-10">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <!-- Top Footer Content -->
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-10">
+            <!-- Column 1 -->
+            <div class="col-span-1">
+                <h2 class="text-xl font-semibold mb-4">ABOUT ZOMATO</h2>
+                <ul class="text-gray-600 space-y-2">
+                    <li><a href="#" class="hover:text-gray-900">Who We Are</a></li>
+                    <li><a href="#" class="hover:text-gray-900">Blog</a></li>
+                    <li><a href="#" class="hover:text-gray-900">Work With Us</a></li>
+                    <li><a href="#" class="hover:text-gray-900">Investor Relations</a></li>
+                    <li><a href="#" class="hover:text-gray-900">Report Fraud</a></li>
+                    <li><a href="#" class="hover:text-gray-900">Press Kit</a></li>
+                    <li><a href="#" class="hover:text-gray-900">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 2 -->
+            <div class="col-span-1">
+                <h2 class="text-xl font-semibold mb-4">ZOMAVERSE</h2>
+                <ul class="text-gray-600 space-y-2">
+                    <li><a href="#" class="hover:text-gray-900">Zomato</a></li>
+                    <li><a href="#" class="hover:text-gray-900">Blinkit</a></li>
+                    <li><a href="#" class="hover:text-gray-900">Feeding India</a></li>
+                    <li><a href="#" class="hover:text-gray-900">Hyperpure</a></li>
+                    <li><a href="#" class="hover:text-gray-900">Zomato Live</a></li>
+                    <li><a href="#" class="hover:text-gray-900">Zomaland</a></li>
+                    <li><a href="#" class="hover:text-gray-900">Weather Union</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 3 -->
+            <div class="col-span-1">
+                <h2 class="text-xl font-semibold mb-4">FOR RESTAURANTS</h2>
+                <ul class="text-gray-600 space-y-2">
+                    <li><a href="#" class="hover:text-gray-900">Partner With Us</a></li>
+                    <li><a href="#" class="hover:text-gray-900">Apps For You</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 4 -->
+            <div class="col-span-1">
+                <h2 class="text-xl font-semibold mb-4">LEARN MORE</h2>
+                <ul class="text-gray-600 space-y-2">
+                    <li><a href="#" class="hover:text-gray-900">Privacy</a></li>
+                    <li><a href="#" class="hover:text-gray-900">Security</a></li>
+                    <li><a href="#" class="hover:text-gray-900">Terms</a></li>
+                    <li><a href="#" class="hover:text-gray-900">Sitemap</a></li>
+                </ul>
+            </div>
+
+            <!-- Column 5 (Social Links and App Store) -->
+            <div class="col-span-1">
+                <h2 class="text-xl font-semibold mb-4">SOCIAL LINKS</h2>
+                <div class="flex space-x-4 mb-4">
+                    <a href="#" class="text-gray-600 hover:text-gray-900"><i class="fa-brands fa-linkedin"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900"><i class="fa-brands fa-instagram"></i></i></a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="#" class="text-gray-600 hover:text-gray-900"><i class="fa-brands fa-twitter"></i></a>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="inline-block">
+                        <img src="https://b.zmtcdn.com/data/webuikit/9f0c85a5e33adb783fa0aef667075f9e1556003622.png" alt="App Store" class="h-10">
+                    </a>
+                    <a href="#" class="inline-block">
+                        <img src="https://b.zmtcdn.com/data/webuikit/23e930757c3df49840c482a8638bf5c31556001144.png" alt="Google Play" class="h-10">
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Bottom Footer Content -->
+        <div class="border-t border-gray-200 pt-6 text-center text-gray-500">
+            <p>&copy; 2024 Zomato™ Ltd. All rights reserved.</p>
+            <p class="mt-1">By continuing past this page, you agree to our Terms of Service, Cookie Policy, Privacy Policy, and Content Policies. All trademarks are properties of their respective owners.</p>
+        </div>
+    </div>
+</footer>
 </body>
 </html>
